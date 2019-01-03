@@ -273,7 +273,7 @@ trait Auditable
 
         $morphPrefix = Config::get('audit.user.morph_prefix', 'user');
 
-        $tags = implode(',', $this->generateTags());
+        $tags = json_encode($this->generateTags());
 
         $user = $this->resolveUser();
 
